@@ -253,6 +253,8 @@ func buildScaler(ctx context.Context, client client.Client, triggerType string, 
 		return scalers.NewSolrScaler(config)
 	case "stan":
 		return scalers.NewStanScaler(config)
+	case "sumologic":
+		return scalers.NewSumologicScaler(config)
 	default:
 		return nil, fmt.Errorf("no scaler found for type: %s", triggerType)
 	}
